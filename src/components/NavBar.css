@@ -1,0 +1,12 @@
+.navBar {
+  background-color: #2c2c2c !important;
+  box-shadow: 0 4px 4px -3px #3a3a3aa8;
+}
+
+.navLink {
+  color: #f5f5f1 !important;
+}
+
+.buttonSearch {
+  background-color: transparent !important;
+}
