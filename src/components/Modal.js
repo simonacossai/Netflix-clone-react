@@ -55,10 +55,10 @@ class ModalForm extends React.Component {
           onHide={() => this.setState({ show: false })}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.state.movies}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <CommentForm/>
+            <CommentForm id={this.state.movies}/>
           </Modal.Body>
           <Modal.Footer>
           </Modal.Footer>

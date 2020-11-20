@@ -2,26 +2,30 @@ import React from 'react'
 import { Col, Form, Row, Button} from 'react-bootstrap'
 
  class CommentForm extends React.Component {
-     state = {
-         comment: {
-             elementId: '', 
-             rate: 1,
-             comment: '',
+ 
+    constructor(props){
+        super(props);
+        this.state = {
+            comment: {
+                comment: "",
+                rate: 1,
+                elementId: this.props.id,
+            },  
         }
-     }
+    }
      
      updateCommentField = (e) => {
-         let comment = { ...this.state.comment }
-         let currentId = e.currentTarget.imdbID
         
-         comment[currentId] = e.currentTarget.value
-         this.setState({ comment: comment })
+        let comment = { ...this.state.comment } 
+        let currentId = e.currentTarget.id 
+        comment[currentId] = e.currentTarget.value
+        this.setState({ comment: comment })     
      }
 
      submitComment = async (e) => {
          e.preventDefault();
          try {
-             let response = await fetch('https://striveschool-api.herokuapp.com/api/comment',
+             let response = await fetch('https://striveschool-api.herokuapp.com/api/comments/',
                  {
                      method: 'POST',
                      body: JSON.stringify(this.state.comment),
@@ -42,14 +46,15 @@ import { Col, Form, Row, Button} from 'react-bootstrap'
                  })
              } else {
                  console.log('please check again')
+                 console.log(this.state.comment);
              }
          } catch (e) {
              console.log(e)
          }
      }
-     render() {
+     render(props) {
         return (
-            <Form onsubmit={this.submitComment}>
+            <Form onSubmit={this.submitComment}>
                 <Row>
                     <Col md={6}>
                         <Form.Group>
@@ -82,7 +87,8 @@ import { Col, Form, Row, Button} from 'react-bootstrap'
                                 type="text"
                                 name="comment"
                                 id="comment"
-                                placeholder="Your comment" required
+                                placeholder="Your comment" 
+                                required
                                 value={this.state.comment.comment}
                                 onChange={this.updateCommentField}
                             />

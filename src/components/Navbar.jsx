@@ -15,10 +15,9 @@ const NavBar = () => {
           <Nav.Link className="navLink" href="#myList">My List</Nav.Link>
         </Nav>
         <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info" className="buttonSearch" >Search</Button>
+         
         </Form>
-        <Navbar.Brand> <img style={{height: "25px"}} src={profilepic} className="ml-2"/>
+        <Navbar.Brand> <img style={{height: "30px"}} src={profilepic} className="ml-2"/>
           </Navbar.Brand>
       </Navbar>
       )
