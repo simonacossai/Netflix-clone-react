@@ -5,7 +5,7 @@ import profilepic from '../data/profile_picture.png';
 import {FormControl, Navbar, Button, Form, Nav, Container} from "react-bootstrap"
 const NavBar = () => {
     return (
-    <Navbar className="navBar p-0">
+    <Navbar className="navBar py-0 m-0 px-1">
         <Navbar.Brand> <img style={{height: "65px"}} src={logo}/>
           </Navbar.Brand>
         <Nav className="mr-auto">
