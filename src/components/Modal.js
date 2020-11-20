@@ -20,17 +20,16 @@ class ModalForm extends React.Component {
   handleSubmit = async () => {
     const url =
       this.props.method === "PUT"
-        ? "https://striveschool-api.herokuapp.com/api/product/" +
-          this.props.data._id
-        : "https://striveschool-api.herokuapp.com/api/product/";
+        ? "https://striveschool-api.herokuapp.com/api/comment" +
+          this.props.data.imdbID
+        : "https://striveschool-api.herokuapp.com/api/comment";
     try {
       const response = await fetch(url, {
         method: this.props.method,
         body: JSON.stringify(this.state.movies),
         headers: new Headers({
           "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2NjhlNjk4MzViMDAwMTc1ODRlZTciLCJpYXQiOjE2MDU3ODk5MjYsImV4cCI6MTYwNjk5OTUyNn0.4C10FpKd6Z_zglQM7bO9F87KNlDxjd5t-7JQnKV6WR0",
+          "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3OTg1Yzk4MzViMDAwMTc1ODUwNGUiLCJpYXQiOjE2MDU4Njc2MTIsImV4cCI6MTYwNzA3NzIxMn0.U6mxgBFpYT7skg3ZUkt222yuYfZdPD1e_0OV27UXk0c",
         }),
       });
       if (response.ok) {
@@ -62,9 +61,6 @@ class ModalForm extends React.Component {
             <CommentForm/>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" >
-              Post data
-            </Button>
           </Modal.Footer>
         </Modal>
       </>
