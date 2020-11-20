@@ -22,5 +22,12 @@
 .button-modal:focus,
 .button-modal:active{
   border: 1px solid transparent!important;
-  box-shadow: transparent!important;
+  box-shadow: none!important;
+  outline: 0!important;
+  box-shadow: none!important;
+}
+
+.buttonModal{
+  background-color: white!important;
+  color: black!important;
 }

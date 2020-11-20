@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Form, Row, Button} from 'react-bootstrap'
+import './NavBar.css';
 
  class CommentForm extends React.Component {
  
@@ -54,7 +55,7 @@ import { Col, Form, Row, Button} from 'react-bootstrap'
      }
      render(props) {
         return (
-            <Form onSubmit={this.submitComment}>
+            <Form onSubmit={this.submitComment} >
                 <Row>
                     <Col md={6}>
                         <Form.Group>
@@ -95,7 +96,7 @@ import { Col, Form, Row, Button} from 'react-bootstrap'
                         </Form.Group>
                     </Col>
                 </Row>
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className="buttonModal">Submit</Button>
             </Form>
         )
     }
