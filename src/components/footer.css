@@ -1,0 +1,31 @@
+footer {
+    margin-top: 10px;
+    padding-top: 20px;
+    background-color: #141414;
+  }
+  .link {
+    max-width: 980px;
+    margin: 20px auto 0;
+    padding: 0 4%;
+    color: grey;
+    font-size: 14px;
+    line-height: 23pt;
+  }
+  .link:hover {
+    color: grey;
+  }
+  .copyright {
+    color: grey;
+    font-size: 14px;
+  }
+  #serviceButton {
+    color: grey;
+    background-color: #141414;
+    border: solid grey 1px;
+    margin: 0;
+    padding: 2px;
+    font-size: 14px;
+  }
+  #icon {
+    font-size: 27px;
+  }
