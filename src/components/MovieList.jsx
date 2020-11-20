@@ -5,28 +5,10 @@ import SingleMovie from './SingleMovie';
 
 class MovieList extends React.Component {
     state = {
-        titles:["batman", "superman"],
-        titanic: ["titanic"],
+        titles:["batman", "superman", "titanic", "Harry Potter"],
         movies:[],
+        array: [],
     }
-
-    /*fetchMovies = async (titles) => {
-        try {
-          const response = await fetch("http://www.omdbapi.com/?apikey=ada5e6d6&s="+ titles, {
-            method: "GET",
-          });
-          const data = await response.json();
-          console.log(data);
-        } catch (error) {
-          console.error(`API ERROR : ${error.message}`);
-        }
-      };   
-      componentDidMount =async () => {
-        let firstmovies= await this.fetchMovies(this.state.titles);
-        this.fetchMovies(this.state.titanic);
-      };*/
-
- 
 
       fetchMovies = async (titles) => {
         try {
@@ -37,17 +19,20 @@ class MovieList extends React.Component {
           );
           if (response.ok) {
             const data = await response.json();
-            this.setState({ movies: data.Search });
+            this.state.array.push(...data.Search);
+            console.log(this.state.array);
+            this.setState({ movies: this.state.array });
             console.log("state", this.state.movies);
           }
         } catch (e) {
           console.log(e);
         }
       };
-      componentDidMount = async () => {
-        this.fetchMovies("batman");
+      componentDidMount = async () => {  
+        {this.state.titles.forEach((movie) => (
+            this.fetchMovies(movie)
+        ))}
       };
-    
 
 
      render(props){
@@ -64,6 +49,7 @@ class MovieList extends React.Component {
                         ))}
                     </Row>
                 </Container>
+            
             </div>
         );
     }
