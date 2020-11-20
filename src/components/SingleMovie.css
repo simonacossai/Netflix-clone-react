@@ -10,11 +10,41 @@
 .moviePoster:hover{
     transition: all ease .15s;
     transform: scale(1.1);
+    position: relative;
 }
-p{
+
+.wrapper{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+
+.title{
     position: absolute;
     bottom:0; 
     left:0;
     right: 0;
     margin: auto;
+    text-shadow: 5px 5px 10px #000;
+    display: none;
+    transition: all ease .30s;
+}
+
+.moviePoster::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.2); /*dim the background*/
+
+}
+
+.moviePoster:hover+ .title{
+    transition: all ease .30s;
+    display: block!important;
 }

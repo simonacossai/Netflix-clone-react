@@ -6,9 +6,9 @@ class SingleProduct extends React.Component {
   render(props) {
     return (
     <Col md={2}>
-        <div>
+        <div className="wrapper">
         <Card.Img fluid variant="top" src={this.props.movie.Poster} className="moviePoster"/>
-        <p style={{color: "#fff"}}>{this.props.movie.Title}</p>
+        <p style={{color: "#fff"}} className="title">{this.props.movie.Title}</p>
         </div>
       </Col>
     );
