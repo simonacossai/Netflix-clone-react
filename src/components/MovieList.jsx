@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, FormControl } from "react-bootstrap";
 import SingleMovie from './SingleMovie';
+import './MovieList.css';
 
 
 class MovieList extends React.Component {
@@ -38,9 +39,14 @@ class MovieList extends React.Component {
      render(props){
         return (
             <div>
-                <Container fluid className=" justify-content-center mt-3 mb-4 mx-0 " style={{overflowX: "hidden", backgroundColor: "#2c2c2c", color:"#ffff"}}>
+                <Container fluid className=" justify-content-center mt-3 mx-0 mb-5" style={{overflowX: "hidden", backgroundColor: "#2c2c2c", color:"#ffff"}}>
+                        <div className="d-flex align-items-center justify-content-start m-0">
                         <h2>TV SHOWS</h2>
-                   <Row className="justify-content-start mt-3">
+                        <select>
+                            <option>genres</option>
+                        </select>
+                        </div>
+                   <Row className="mt-3 mb-5">
                     {this.state.movies.map((m) => (
                             <SingleMovie movie={m} key={m.imdbID} />
                         ))}
