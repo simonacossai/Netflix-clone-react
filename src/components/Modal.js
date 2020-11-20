@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import CommentForm from "./message"
+import './NavBar.css';
 
 class ModalForm extends React.Component {
   state = {
@@ -46,8 +47,8 @@ class ModalForm extends React.Component {
     console.log(this.state);
     return (
       <>
-        <Button variant="success" onClick={() => this.setState({ show: true })}>
-          {this.props.btn}
+        <Button variant="success" onClick={() => this.setState({ show: true })} className="button-modal">
+          +
         </Button>
 
         <Modal

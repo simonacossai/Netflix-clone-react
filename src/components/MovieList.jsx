@@ -7,7 +7,7 @@ import './MovieList.css';
 
 class MovieList extends React.Component {
     state = {
-      titles:["batman", "superman", "titanic", "Harry Potter"],
+      titles:["batman", "superman", "titanic"],
       movies:[],
       filtered:[],
       array: [],
