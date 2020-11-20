@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Card, FormControl } from "react-bootstrap";
+import { Container, Row, FormControl } from "react-bootstrap";
 import SingleMovie from './SingleMovie';
 
 
 class MovieList extends React.Component {
     state = {
-        titles:["batman", "superman", "titanic", "Harry Potter"],
+        titles:["batman", "superman", "Harry Potter"],
         movies:[],
         array: [],
     }
@@ -38,12 +38,9 @@ class MovieList extends React.Component {
      render(props){
         return (
             <div>
-                <Container className=" justify-content-center mt-3 mb-4">
-                    <div className="d-flex align-items-center">
-                        <h1 >Last released</h1>
-                    </div>
-                    <hr className="my-2" />
-                    <Row className="justify-content-start mt-3">
+                <Container fluid className=" justify-content-center mt-3 mb-4 mx-0 " style={{overflowX: "hidden", backgroundColor: "#2c2c2c", color:"#ffff"}}>
+                        <h2>TV SHOWS</h2>
+                   <Row className="justify-content-start mt-3">
                     {this.state.movies.map((m) => (
                             <SingleMovie movie={m} key={m.imdbID} />
                         ))}

@@ -1,0 +1,12 @@
+.moviePoster{
+    width:225px;
+    height: 130px;
+    margin-top: 20px;
+    object-fit: cover;
+    transition: all ease .15s;
+
+}
+.moviePoster:hover{
+    transition: all ease .15s;
+    transform: scale(1.1);
+}
