@@ -1,7 +1,7 @@
 footer {
     margin-top: 0px;
     padding-top: 20px;
-    background-color:  #2c2c2c;
+    background-color:  #1f1e1e;
   }
   .link {
     max-width: 980px;
@@ -20,7 +20,7 @@ footer {
   }
   #serviceButton {
     color: grey;
-    background-color:  #2c2c2c;
+    background-color:  #1f1e1e;
     border: solid grey 1px;
     margin: 0;
     padding: 2px;

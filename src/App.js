@@ -5,13 +5,20 @@ import MyFooter from "./components/footer";
 import Navbar from './components/Navbar';
 import Details from './components/Details';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
+import JumbotronComponent from './components/Jumbotron';
 
 function App() {
   return (
    <>
-     <Router>
+    <Router>
    <Navbar />
+   <Route
+    path="/"
+    exact
+    render={(
+      props 
+    ) => <JumbotronComponent {...props} />} 
+  />
    <Route
     path="/"
     exact
@@ -22,12 +29,9 @@ function App() {
    <Route
     path="/details/:id"
     exact
-    // render={(props) => (
-    //   <Home title="Stefano" history={props.history} location={props.location} match={props.match} />
-    // )}
     render={(
-      props // props are history, location, match
-    ) => <Details title="Details" {...props} />} // in this way you can pass your own props along with the router ones
+      props 
+    ) => <Details title="Details" {...props} />} 
   />
    <MyFooter/>
    </Router>
@@ -36,20 +40,3 @@ function App() {
   )}
 
   export default App;
-
-/*
-  <Router>
-  <NavBar title="Strivestaurant" />
-  <Route
-    path="/"
-    exact
-    // render={(props) => (
-    //   <Home title="Stefano" history={props.history} location={props.location} match={props.match} />
-    // )}
-    render={(
-      props // props are history, location, match
-    ) => <Home title="Stefano" {...props} />} // in this way you can pass your own props along with the router ones
-  />
-  <Route path="/reservation" exact component={Reservations} />
-  <Route path="/details/:stefano" component={DishDetails} />
-</Router>*/

@@ -5,6 +5,7 @@ import SingleMovie from './SingleMovie';
 import './MovieList.css';
 
 
+
 class MovieList extends React.Component {
   state = {
     titles: ["batman", "superman", "titanic"],
@@ -54,8 +55,8 @@ class MovieList extends React.Component {
   render(props) {
     return (
       <div>
-        <Container fluid className=" justify-content-center mt-3 mx-0 mb-5" style={{ overflowX: "hidden", backgroundColor: "#2c2c2c", color: "#ffff" }}>
-          <div className="d-flex align-items-center justify-content-start m-0">
+        <Container fluid className=" justify-content-center mt-0 mx-0 mb-5" style={{ overflowX: "hidden", backgroundColor: "#1f1e1e",position: "relative", color: "#ffff" }}>
+          <div className="d-flex align-items-center justify-content-start m-0 mt-5">
             <h2>{this.props.title}</h2>
             <select>
               <option>genres</option>

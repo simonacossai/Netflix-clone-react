@@ -8,18 +8,18 @@ class MovieDetails extends React.Component {
         movie: null
     }
 
-    componentDidMount=async()=> {
+    componentDidMount = async () => {
         let movieIdFromTheSearchBar = this.props.match.params.id;
         try {
-            let response = await fetch("http://www.omdbapi.com/?apikey=ada5e6d6&i="+ movieIdFromTheSearchBar,
+            let response = await fetch("http://www.omdbapi.com/?apikey=ada5e6d6&i=" + movieIdFromTheSearchBar,
                 {
                     method: 'GET',
                 })
             if (response.ok) {
                 let selectedMovie = await response.json()
-              this.setState({
-                  movie: selectedMovie
-              })
+                this.setState({
+                    movie: selectedMovie
+                })
             } else {
                 console.log("error during fetch")
             }
@@ -29,7 +29,7 @@ class MovieDetails extends React.Component {
     }
 
     render(props) {
-        
+
         return (
             <Container className="d-flex justify-content-center align-items-center text-center mt-5">
                 {this.state.movie &&
@@ -42,7 +42,7 @@ class MovieDetails extends React.Component {
                                 <Card className="details-card">
                                     <Card.Body>
                                         <Card.Title>{this.state.movie.Title} <Badge variant="danger" className="badge ml-3">{this.state.movie.imdbRating}</Badge></Card.Title>
-                                
+
                                         <Card.Text className="d-flex justify-content-start text-left mt-3">
                                             {this.state.movie.Plot}
                                         </Card.Text>
@@ -50,10 +50,10 @@ class MovieDetails extends React.Component {
                                 </Card>
                             </Col>
                         </Row>
-                        <MovieComments id={this.state.movie.imdbID}/>
+                        <MovieComments id={this.state.movie.imdbID} />
                     </div>}
-                {!this.state.movie &&   <Spinner animation="grow" variant="danger" className="mt-5 d-flex justify-content-center align-items-center text-center" />
-}
+                {!this.state.movie && <Spinner animation="grow" variant="danger" className="mt-5 d-flex justify-content-center align-items-center text-center" />
+                }
             </Container>
         )
     }

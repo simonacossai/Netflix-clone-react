@@ -1,0 +1,42 @@
+.overlay:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    z-index: 3000;
+    background-image: linear-gradient(to top,#1f1e1e, #2f2f2f6b, #37373767, #3e3e3e41, #46464600);
+  }
+  
+.watch,
+.watch:hover{
+    background-color: rgb(241, 241, 241)!important;
+    color: #000;
+    border: 2px solid rgb(241, 241, 241)!important;
+    padding: 7px 15px;
+    font-size: 18px;
+}
+
+.more{
+    background-color: rgba(128, 128, 128, 0.747);
+    border: 2px solid rgba(128, 128, 128, 0.747)!important;
+    padding: 7px 15px;
+    font-size: 18px;
+
+
+}
+.more:hover{
+    background-color: rgba(128, 128, 128, 0.747);
+    border: 2px solid rgba(128, 128, 128, 0.747)!important;
+    padding: 7px 15px;
+    font-size: 18px;
+
+
+}
+.movie-title{
+    font-size:70px;
+}

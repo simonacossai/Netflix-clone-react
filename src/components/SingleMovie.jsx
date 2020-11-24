@@ -8,7 +8,8 @@ class SingleProduct extends React.Component {
     return (
       <Col lg={2} md={4} xs={12}>
         <div className="wrapper">
-          <Card.Img fluid variant="top" src={this.props.movie.Poster} className="moviePoster" onClick={() => this.props.props.history.push('/details/' + this.props.movie.imdbID)} />
+          <Card.Img fluid variant="top" src={this.props.movie.Poster} className="moviePoster" onClick={() =>
+             this.props.props.history.push('/details/' + this.props.movie.imdbID)} />
           <p style={{ color: "#fff" }} className="title">{this.props.movie.Title}</p>
         </div>
         <ModalForm
@@ -21,5 +22,4 @@ class SingleProduct extends React.Component {
     );
   }
 }
-
 export default SingleProduct;
