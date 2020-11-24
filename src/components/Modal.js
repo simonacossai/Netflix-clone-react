@@ -44,7 +44,6 @@ class ModalForm extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <>
         <Button variant="success" onClick={() => this.setState({ show: true })} className="button-modal">

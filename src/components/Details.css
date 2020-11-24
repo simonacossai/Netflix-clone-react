@@ -1,0 +1,10 @@
+.details-card{
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width:700px;
+    padding: 20px 30px;
+   
+}
+.badge{
+    padding: 7px 10px;
+}
